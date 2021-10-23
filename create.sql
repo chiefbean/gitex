@@ -9,5 +9,8 @@ CREATE TABLE commit (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     message TEXT,
     user TEXT,
-    date TEXT
+    epoch INTEGER,
+    parent TEXT,
+    branch TEXT,
+    repoid INTEGER
 );
