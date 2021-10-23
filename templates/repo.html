@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
-{% block extra_include %}
+{% block head %}
+{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='codemirror.css') }}">
 <script src="{{ url_for('static', filename='codemirror.js') }}"></script>
 <script>
