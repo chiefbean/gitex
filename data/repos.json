@@ -1,0 +1,11 @@
+{
+    "repos": [
+        {
+            "id": 0,
+            "hash": "67c31457d77b8878e1494ef1724ce7b96b1bc3f6",
+            "name": "Gitex",
+            "description": "Git Web Client using Flask",
+            "path": "bean/gitex.git"
+        }
+    ]
+}
