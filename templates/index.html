@@ -1,3 +1,37 @@
 {% extends 'layout.html' %}
+{% block nav %}
+<aside>
+    <div id="repos">
+        <div id="r-header">
+            <h3>Repositories</h3>
+        </div>
+        <nav>
+            <ul> 
+                {% for repo in repos %}
+                    <li onclick="window.location='{{ url_for('repo', repo_hash=repo['hash']) }}'"><i class="far fa-folder"></i> {{ repo['path'] }}</li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</aside>
+{% endblock %}
 {% block main %}
+<content>
+    <table>
+        <tr id="calendar">
+            <td colspan="3">TODO: build heatmap commit calendar</td>
+        </tr>
+        {% for commit in commits %}
+            <tr>
+                <td class="r-ico"><p><img src="https://secure.gravatar.com/avatar/{{ repos[commit['repo_id']]['hash'] }}?d=identicon&s=25" /></p></td>
+                <td class="r-data">
+                    <p><span class="b-text">{{ commit['author'] }}</span> activity <span class="b-text">{{ commit['branch'] }}</span> at <span class="accent-s">{{ repos[commit['repo_id']]['name'] }}</span></p>
+                    <p><img src="https://secure.gravatar.com/avatar/{{ commit['hash'] }}?d=identicon&s=25" /> <span class="accent-s">{{ commit['hash'] }}</span> <span class="light-text">{{ commit['message'] }}</span></p>
+                    <p><span class="i-text light-text">{{ commit['time_since'] }} {{ time_tags[commit['hash']] }} ago</span></p>
+                </td>
+                <td class="r-type">commit</td>
+            </tr>
+        {% endfor %}
+    </table>
+</content>
 {% endblock %}

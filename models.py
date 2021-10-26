@@ -1,17 +1,9 @@
-import sqlite3 as sql
+import json
 
-def getRepo(name):
-    con = sql.connect("data.db")
-    con.row_factory = sql.Row
+def getRepos():
+    with open("data/repos.json") as f:
+        return json.load(f)
 
-    cur = con.cursor()
-    cur.execute("select * from repo where name=?", (name,))
-    r = cur.fetchone()
-
-    cur = con.cursor()
-    cur.execute("select * from commit where repoid=?", (r['id'],))
-    c = cur.fetchall()
-
-    con.close()
-
-    return r, c
+def getCommits():
+    with open("data/commits.json") as f:
+        return json.load(f)
