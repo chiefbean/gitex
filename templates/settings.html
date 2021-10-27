@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block main %}
+<div id="keys">
+    {% for key in keys %}
+        <div class="key-holder">
+            <div class="key-type">
+                <i class="fas fa-key"></i>
+                <br>
+                <span class="button-like-text">{{ key['type'] }}</span>
+            </div>
+            <div class="key-content">
+                <p><span class="b-text">{{ key['name'] }}</span></p>
+                <p>SHA256:{{ key['hash'] }}</p>
+                <p>Created on: {{ key['epoch'] }}</p>
+            </div>
+            <div class="key-delete">
+                <button>Delete</button>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -160,18 +160,18 @@ i {
   color: #f8f9fa;
 }
 
-table {
+#activity {
   width: 80%;
   margin: auto;
   margin-top: 4rem;
   border-collapse: collapse;
 }
-table tr {
+#activity tr {
   width: 100%;
   border: 0;
   border-bottom: 2px solid #dee2e6;
 }
-table tr td {
+#activity tr td {
   vertical-align: top;
   padding: 15px 0;
 }
@@ -214,6 +214,102 @@ table tr td {
 }
 .accent-s:hover {
   text-decoration: underline;
+}
+
+.button-like-text {
+  border: 1px solid #212529;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  padding: 3px 5px;
+}
+
+#keys {
+  width: 66%;
+  margin: auto;
+  margin-top: 4rem;
+}
+#keys .key-holder {
+  border: 1px solid #343a40;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  align-items: center;
+  color: #212529;
+  padding: 1rem;
+}
+#keys .key-holder .key-type {
+  text-align: center;
+}
+#keys .key-holder .key-type i {
+  font-size: 3rem;
+  color: #212529;
+  margin-bottom: 1.5rem;
+}
+#keys .key-holder .key-content p {
+  margin: 0;
+  margin-top: 1rem;
+}
+#keys .key-holder .key-delete {
+  text-align: center;
+}
+#keys .key-holder .key-delete button {
+  border: 1px solid #f85149;
+  border-radius: 8px;
+  color: #f85149;
+  background: white;
+  padding: 8px 12px;
+  transition: color 0.4s ease-out, background 0.4s ease-out;
+}
+#keys .key-holder .key-delete button:hover {
+  background: #f85149;
+  color: #f8f9fa;
+}
+
+#repo-holder {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  width: 80%;
+  margin: auto;
+  margin-top: 4rem;
+}
+#repo-holder #file-listing {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+}
+#repo-holder #file-listing tr {
+  border-bottom: 1px solid #dee2e6;
+}
+#repo-holder #file-listing tr:first-of-type {
+  border-bottom: none;
+  background: #343a40;
+  color: #f8f9fa;
+}
+#repo-holder #file-listing tr:last-of-type {
+  border-bottom: none;
+}
+#repo-holder #file-listing tr td, #repo-holder #file-listing tr th {
+  padding: 8px 0;
+}
+#repo-holder #file-listing tr td:first-of-type, #repo-holder #file-listing tr th:first-of-type {
+  padding: 8px 20px;
+  width: 1rem;
+}
+#repo-holder #file-listing tr td i, #repo-holder #file-listing tr th i {
+  color: #212529;
+}
+#repo-holder #file-listing tr th {
+  border-radius: 8px 8px 0 0;
+  text-align: left;
+  font-size: 1.5rem;
+  height: 2rem;
+}
+#repo-holder #file-listing tr th img {
+  border-radius: 8px;
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-top;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,14 +4,7 @@ $accent-p: #dee2e6;
 $accent-s: #ee6c4d;
 $text-p: #f8f9fa;
 $text-s: #212529;
-
-$grey-p: #161b22;
-$grey-s: #0d1117;
-$grey-3: #010409;
-$grey-text-s: #484f58;
-$grey-text-p: #c9d1d9;
-$blue-p: #191970;
-$blue-s: #3c3c85;
+$red: #f85149;
 $r-ico-rem: 2rem;
 
 ::-webkit-scrollbar { 
@@ -190,7 +183,7 @@ i {
     color: $text-p;
 }
 
-table {
+#activity {
     width: 80%;
     margin: auto;
     margin-top: 4rem;
@@ -249,5 +242,114 @@ table {
     cursor: pointer;
     &:hover {
         text-decoration: underline;
+    }
+}
+
+.button-like-text {
+    border: 1px solid $text-s;
+    border-radius: 8px;
+    font-size: .75rem;
+    padding: 3px 5px;
+}
+
+#keys {
+    width: 66%;
+    margin: auto;
+    margin-top: 4rem;
+    .key-holder {
+        border: 1px solid $background-p;
+        border-radius: 8px;
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        align-items: center;
+        color: $text-s;
+        padding: 1rem;
+
+        .key-type {
+            text-align: center;
+            i {
+                font-size: 3rem;
+                color: $text-s;
+                margin-bottom: 1.5rem;
+            }
+        }
+        .key-content {
+            p {
+                margin: 0;
+                margin-top: 1rem;
+            }
+        }
+        .key-delete {
+            text-align: center;
+
+            button {
+                border: 1px solid $red;
+                border-radius: 8px;
+                color: $red;
+                background: white;
+                padding: 8px 12px;
+                transition: color 0.4s ease-out, background 0.4s ease-out;
+
+                &:hover {
+                    background: $red;
+                    color: $text-p;
+                }
+            }
+        }
+    }
+}
+
+#repo-holder {
+    border: 1px solid $accent-p;
+    border-radius: 8px;
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+
+    #file-listing {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 8px;
+
+        tr {
+            border-bottom: 1px solid $accent-p;
+
+            &:first-of-type {
+                border-bottom: none;
+                background: $background-p;
+                color: $text-p;
+            }
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+
+            td, th {
+                padding: 8px 0;
+
+                &:first-of-type {
+                    padding: 8px 20px;
+                    width: 1rem;
+                }
+
+                i {
+                    color: $text-s;
+                }
+            }
+
+            th {
+                border-radius: 8px 8px 0 0;
+                text-align: left;
+                font-size: 1.5rem;
+                height: 2rem;
+                img {
+                    border-radius: 8px;
+                    margin-right: 1rem;
+                    width: 2rem;
+                    height: 2rem;
+                    vertical-align: text-top;
+                }
+            }
+        }
     }
 }

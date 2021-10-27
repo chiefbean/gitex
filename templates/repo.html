@@ -5,19 +5,36 @@
 <script src="{{ url_for('static', filename='codemirror.js') }}"></script>
 <script>
     var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
-      lineNumbers: true
+    	lineNumbers: true
     });
-  </script>
+</script>
 {% endblock %}
-
-{% block nav %}
-<aside>
-    <nav></nav>
-</aside>
-{% endblock %}
-
-{% block repo %}
-<content>
-<p class="small-title">{{ repo['name'] }}</p>
-</content>
+{% block main %}
+<div id="repo-holder">
+	<table id="file-listing">
+		<tr>
+			<th colspan="2"><img src="https://secure.gravatar.com/avatar/{{ repo['hash'] }}?d=identicon&s=25" />Gitex</th>
+		</tr>
+		{% for folder in folders %}
+			<tr>
+				<td>
+					<i class="fas fa-folder"></i>
+				</td>
+				<td>
+					{{ folder }}
+				</td>
+			</tr>
+		{% endfor %}
+		{% for file in files %}
+			<tr>
+				<td>
+					<i class="far fa-file"></i>
+				</td>
+				<td>
+					{{ file }}
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>
 {% endblock %}

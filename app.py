@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for
 import time
 import models
+import utils
 
 app = Flask(__name__)
 
@@ -29,7 +30,14 @@ def index():
 
 @app.route('/<repo_hash>')
 def repo(repo_hash):
-    return render_template('repo.html')
+    r = models.getRepo(repo_hash)
+    listing = utils.getDirListing(r['path'])
+    return render_template('repo.html', repo=r, files=listing['files'], folders=listing['folders'])
+
+@app.route('/settings')
+def settings():
+    keys = models.getKeys()
+    return render_template('settings.html', keys=keys['keys'])
 
 if __name__ == '__main__':
     app.run()

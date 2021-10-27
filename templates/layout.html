@@ -13,15 +13,11 @@
             <input type="text" placeholder="Search repos" />
             <i class="fas fa-search"></i>    
         </div>
-        <a href="#">Settings</a>
+        <a href="{{ url_for('settings') }}">Settings</a>
     </header>
     {% block nav %}
-    <aside>
-        <nav></nav>
-    </aside>
     {% endblock %}
     {% block main %}
-    <content></content>
     {% endblock %}
 </body>
 </html>
